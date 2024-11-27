@@ -14,5 +14,8 @@ Copyright 2020. 맛동연 All rights reserved.
 - 2020년 맛동연 eat_yeon_ 계정 운영
 
 ## 기획서
-![image](https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df)
-![image](https://github.com/user-attachments/assets/79dc656f-7a44-4d6b-bcaf-17ef15a834e1)
+대동여지도와 같은 컨셉으로 **직접** 그림을 그려 기획서를 작성해봤습니다.
+
+<br/>
+
+<img src="https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df" width="500" /> <img src="https://github.com/user-attachments/assets/79dc656f-7a44-4d6b-bcaf-17ef15a834e1" width="500" />
