@@ -18,4 +18,5 @@ Copyright 2020. 맛동연 All rights reserved.
 
 <br/>
 
-<img src="https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df" width="500" /> <img src="https://github.com/user-attachments/assets/79dc656f-7a44-4d6b-bcaf-17ef15a834e1" width="500" />
+<img src="https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df" width="500" /> <img src="https://github.com/user-attachments/assets/247bcc8b-fbab-4ee9-bc5f-b82d1f48c4ed" width="300" />
+
