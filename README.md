@@ -20,3 +20,30 @@ Copyright 2020. 맛동연 All rights reserved.
 
 <img src="https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df" width="500" /> <img src="https://github.com/user-attachments/assets/247bcc8b-fbab-4ee9-bc5f-b82d1f48c4ed" width="300" />
 
+
+
+<br/>
+
+## 에뮬레이터 실행시 본인 화면에서 시작하게 하는법
+` app/manifests/AndroidManifest.xml ` 에서 본인이 작업하는 액티비티 사이에 
+```xml
+<intent-filter>
+  <action android:name="android.intent.action.MAIN" />
+
+  <category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
+```
+넣고 exported="true"로 변경
+
+
+- 본인이 작업하는 액티비티가 DetailActivity일 경우
+```xml
+<activity
+  android:name=".ui.detail.DetailActivity"
+  android:exported="true" >
+  <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+  </intent-filter>
+</activity>
+```
