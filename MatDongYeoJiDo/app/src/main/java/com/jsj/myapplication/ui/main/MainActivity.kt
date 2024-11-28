@@ -27,20 +27,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val db = AppDataBase.AppDatabase.getDatabase(this)
-        repository = PlaceRepository(db)
+       val db = AppDataBase.AppDatabase.getDatabase(this)
+       repository = PlaceRepository(db)
 
-        // CSV 파일 읽어서 DB에 저장
-        lifecycleScope.launch {
-            val places = csvConverter.readCSV(this@MainActivity)
-            repository.insertPlaces(places)
+       // CSV 파일 읽어서 DB에 저장
+       lifecycleScope.launch {
+           val places = csvConverter.readCSV(this@MainActivity)
+           repository.insertPlaces(places)
 
-            // DB에서 데이터 읽기
-            val savedRestaurants = repository.getAllPlaces()
-            savedRestaurants.forEach {
-                println("Restaurant: ${it.name}, ${it.location}")
-            }
-        }
+           // DB에서 데이터 읽기
+           val savedRestaurants = repository.getAllPlaces()
+           savedRestaurants.forEach {
+               println("Restaurant: ${it.name}, ${it.location}")
+           }
+       }
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map_fragment) as MapFragment?
             ?: MapFragment.newInstance().also {
                 supportFragmentManager.beginTransaction().add(R.id.map_fragment, it).commit()
