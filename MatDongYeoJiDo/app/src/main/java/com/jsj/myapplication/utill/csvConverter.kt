@@ -13,10 +13,16 @@ object csvConverter {
         val reader = BufferedReader(InputStreamReader(inputStream))
 
         // 첫 번째 라인(헤더)은 건너뛰기
-        reader.readLine()
+//        reader.readLine()
 
         reader.forEachLine { line ->
-            val columns = line.split(",")
+            val columns = line.split(",").map { it.trim() }
+            if (columns.size < 10) {
+                Log.e("CSV", "Invalid row: $line")
+                return@forEachLine
+            }
+            if (line.isBlank()) return@forEachLine
+//            val columns = line.split(",")
             val location = columns[0]
             val name = columns[1]
             val type = columns[2]
@@ -28,7 +34,18 @@ object csvConverter {
             val score = columns[8].toInt()
             val comment = columns[9]
 
-            places.add(Place(name, location, type, longitude, latitude, signature, price, link, score, comment))
+            places.add(Place(
+                name = name,
+                location = location,
+                type = type,
+                longitude = longitude,
+                latitude = latitude,
+                signature = signature,
+                price = price,
+                link = link,
+                score = score,
+                comment = comment
+            ))
         }
         reader.close()
         return places

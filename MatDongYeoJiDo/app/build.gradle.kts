@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
+//    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -41,9 +41,8 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.room:room-runtime:2.5.1")
-    kapt ("androidx.room:room-compiler:2.5.1")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+//    kapt ("androidx.room:room-compiler:2.5.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("com.naver.maps:map-sdk:3.20.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
