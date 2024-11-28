@@ -1,4 +1,4 @@
-# 맛동여지도
+# 맛동여지도 (맛東輿地圖)
 ![image](https://github.com/user-attachments/assets/433ea114-c809-4ea2-aeab-5b10b7dd3214)
 
 Copyright 2020. 맛동연 All rights reserved.
