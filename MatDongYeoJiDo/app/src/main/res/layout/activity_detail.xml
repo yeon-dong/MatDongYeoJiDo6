@@ -19,8 +19,9 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <View
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/view"
+        android:name="com.naver.maps.map.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginBottom="8dp" />

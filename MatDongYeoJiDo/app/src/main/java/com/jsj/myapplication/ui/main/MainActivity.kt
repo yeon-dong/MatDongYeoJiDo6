@@ -27,7 +27,7 @@ import java.util.ArrayList
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding : ActivityMainBinding
-    private lateinit var navermap : NaverMap
+    private lateinit var navermap: NaverMap
     private var allMarker = mutableListOf<Place>()
 //    private lateinit var repository: PlaceRepository
     override fun onCreate(savedInstanceState: Bundle?) {
