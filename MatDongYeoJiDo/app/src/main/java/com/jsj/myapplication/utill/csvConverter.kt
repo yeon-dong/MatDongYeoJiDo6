@@ -28,7 +28,18 @@ object csvConverter {
             val score = columns[8].toInt()
             val comment = columns[9]
 
-            places.add(Place(name, location, type, longitude, latitude, signature, price, link, score, comment))
+            places.add(Place(
+                name = name,
+                location = location,
+                type = type,
+                longitude = longitude,
+                latitude = latitude,
+                signature = signature,
+                price = price,
+                link = link,
+                score = score,
+                comment = comment
+            ))
         }
         reader.close()
         return places

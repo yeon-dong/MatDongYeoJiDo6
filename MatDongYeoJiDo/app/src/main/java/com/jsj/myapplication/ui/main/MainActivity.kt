@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val db = AppDataBase.AppDatabase.getDatabase(this)
+        val db = AppDataBase.getDatabase(this)
         repository = PlaceRepository(db)
 
         // CSV 파일 읽어서 DB에 저장
