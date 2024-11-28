@@ -3,6 +3,9 @@
 
 Copyright 2020. 맛동연 All rights reserved.
 
+<br/>
+<br/>
+
 ## 맛집 탐방의 대가 "맛동연"이 여러분께 서울의 맛집을 소개해드립니다!
 
 **맛동연 경력**
@@ -17,10 +20,12 @@ Copyright 2020. 맛동연 All rights reserved.
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="16" height="16"> eat_yeon_
 </a> 계정 운영
 
+<br/>
+<br/>
 
 ## 기획
 조선 후기 지리학자이신 **고산자(古山子) 김정호** 선생님의 **〈대동여지도〉(大東輿地圖)** 에서 깊이 감명받아
-맛집 탐방 지도를 그리기로 결심했습니다.
+<br/>맛집 탐방 지도를 그리기로 결심했습니다.
 
 또한 대동여지도와 같은 컨셉으로 **직접** 그림을 그려 기획서를 작성했습니다.
 
