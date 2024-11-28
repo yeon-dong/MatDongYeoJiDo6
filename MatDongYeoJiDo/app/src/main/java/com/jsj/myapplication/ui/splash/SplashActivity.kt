@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.animation.AlphaAnimation
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.jsj.myapplication.R
 import com.jsj.myapplication.ui.detail.DetailActivity
 import com.jsj.myapplication.ui.main.MainActivity
@@ -18,6 +17,13 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        // 이미지 뷰에 Glide로 이미지 로드
+        val splashImageView: ImageView = findViewById(R.id.imageView3)
+        Glide.with(this)
+            .load(R.drawable.matdongtitlecrop) // 이미지 리소스 ID
+            .override(800, 600) // 원하는 크기로 조정
+            .into(splashImageView)
 
         // 스플래시 화면을 페이드 인 애니메이션
         val splashView: View = findViewById(R.id.main)
@@ -39,7 +45,8 @@ class SplashActivity : AppCompatActivity() {
 
                 override fun onAnimationEnd(animation: android.view.animation.Animation?) {
                     val intent = Intent(this@SplashActivity, DetailActivity::class.java)
-                    startActivity(intent)
+                    startActivity(intent) // MainActivity로 이동
+                    splashView.visibility = View.GONE // 스플래시 뷰 숨기기
                     finish() // 스플래시 액티비티 종료
                 }
 
