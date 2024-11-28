@@ -1,12 +1,14 @@
 package com.jsj.myapplication.ui.list
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.jsj.myapplication.R
 import com.jsj.myapplication.data.model.Place
+import com.jsj.myapplication.ui.detail.DetailActivity
 
 data class PlaceItem(
     val imageResId: Int,
@@ -125,8 +127,20 @@ class PlaceListActivity : AppCompatActivity() {
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerItems)
         spinner.adapter = spinnerAdapter
 
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val selectedPlace = places?.get(position)
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("place", selectedPlace)
+            startActivity(intent)
+        }
+
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 val selectedType = spinnerItems[position]
                 val filteredData = allData.filter { it.type.contains(selectedType) }
                 val listAdapter = PlaceListAdapter(this@PlaceListActivity, filteredData)
@@ -134,7 +148,7 @@ class PlaceListActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-
+                // 선택되지 않았을 때 처리 (필요한 경우)
             }
         }
     }

@@ -29,7 +29,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
         place = intent.getParcelableExtra("place")
         binding.storeName.text = "${place?.name}"
-        binding.bestMenuTitle.text = "${place?.signature}"
+        binding.menuAndPrice.text = "${place?.signature}"
         binding.foodScore.text = "맛동연 점수 : ${place?.score}"
         binding.content.text ="${place?.comment}"
         val mapFragment = supportFragmentManager.findFragmentById(R.id.view) as MapFragment?
