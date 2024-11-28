@@ -44,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
                 override fun onAnimationStart(animation: android.view.animation.Animation?) {}
 
                 override fun onAnimationEnd(animation: android.view.animation.Animation?) {
-                    val intent = Intent(this@SplashActivity, DetailActivity::class.java)
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
                     startActivity(intent) // MainActivity로 이동
                     splashView.visibility = View.GONE // 스플래시 뷰 숨기기
                     finish() // 스플래시 액티비티 종료
