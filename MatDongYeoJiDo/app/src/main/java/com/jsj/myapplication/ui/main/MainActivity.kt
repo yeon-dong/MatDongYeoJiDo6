@@ -1,6 +1,8 @@
 package com.jsj.myapplication.ui.main
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,7 @@ import com.jsj.myapplication.data.database.AppDataBase
 import com.jsj.myapplication.data.model.Place
 import com.jsj.myapplication.data.repository.PlaceRepository
 import com.jsj.myapplication.databinding.ActivityMainBinding
+import com.jsj.myapplication.ui.list.PlaceListActivity
 import com.jsj.myapplication.utill.csvConverter
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.CameraUpdate
@@ -20,6 +23,7 @@ import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
 import com.naver.maps.map.overlay.Marker
 import kotlinx.coroutines.launch
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding : ActivityMainBinding
@@ -44,16 +48,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 //                println("Restaurant: ${it.name}, ${it.location}")
 //            }
 //        }
-        binding.button.setOnClickListener{
-            getVisibleMarkers()
-            Log.d("chkec","hey")
-        }
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map_fragment) as MapFragment?
             ?: MapFragment.newInstance().also {
                 supportFragmentManager.beginTransaction().add(R.id.map_fragment, it).commit()
         }
         mapFragment.getMapAsync(this)
         binding.button.setOnClickListener{
+            val intent = Intent(this, PlaceListActivity::class.java)
+            val showingPlace = getVisibleMarkers()
+            intent.putParcelableArrayListExtra("places",ArrayList(showingPlace) ) // 마커 정보 전달
+            startActivity(intent)
+            Log.d("chk","${ArrayList(showingPlace)}")
         }
     }
 
@@ -83,8 +88,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         allMarker.forEach { marker ->
             // 마커의 위치가 카메라 뷰포트 내에 있는지 확인
-            val markerLat = marker.latitude
-            val markerLong = marker.longitude
+            val markerLat = marker.longitude
+            val markerLong = marker.latitude
             val markerPos = LatLng(markerLat,markerLong)
             if (bounds.contains(markerPos)) {
                 val place = marker as? Place
@@ -93,7 +98,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
-        Log.d("visiblemarker",visiblePlaces.toString())
         return visiblePlaces
     }
 }
+
