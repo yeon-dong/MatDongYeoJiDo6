@@ -7,9 +7,9 @@ import com.jsj.myapplication.data.model.Place
 
 @Dao
 interface PlaceDao {
-    @Insert
-    suspend fun insertPlaces(places: List<Place>)
+   @Insert
+   suspend fun insertPlaces(places: List<Place>)
 
-    @Query("SELECT * FROM place")
-    suspend fun getAllPlaces(): List<Place>
+   @Query("SELECT * FROM place")
+   suspend fun getAllPlaces(): List<Place>
 }

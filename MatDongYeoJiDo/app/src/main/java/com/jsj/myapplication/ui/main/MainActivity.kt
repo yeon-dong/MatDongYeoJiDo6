@@ -48,6 +48,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 //                println("Restaurant: ${it.name}, ${it.location}")
 //            }
 //        }
+        binding.button.setOnClickListener{
+            getVisibleMarkers()
+            Log.d("chkec","hey")
+        }
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map_fragment) as MapFragment?
             ?: MapFragment.newInstance().also {
                 supportFragmentManager.beginTransaction().add(R.id.map_fragment, it).commit()
@@ -98,7 +102,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
+        Log.d("visiblemarker",visiblePlaces.toString())
         return visiblePlaces
     }
 }
+
 
