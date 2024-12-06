@@ -1,5 +1,7 @@
 package com.jsj.myapplication.ui.detail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +34,14 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.menuAndPrice.text = "${place?.signature} ${place?.price}"
         binding.foodScore.text = "맛동연 점수 : ${place?.score}"
         binding.content.text ="${place?.comment}"
+
+        // 링크 버튼 클릭 리스너 추가
+        binding.linkButton.setOnClickListener {
+            place?.link?.let { link ->
+                openLink(link)
+            }
+        }
+
         val mapFragment = supportFragmentManager.findFragmentById(R.id.view) as MapFragment?
             ?: MapFragment.newInstance().also {
                 supportFragmentManager.beginTransaction().add(R.id.map_fragment, it).commit()
@@ -52,5 +62,10 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         val marker = Marker()
         marker.position = LatLng(latitude,longitude)
         marker.map = navermap
+    }
+
+    private fun openLink(link: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        startActivity(intent)
     }
 }

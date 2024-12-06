@@ -65,8 +65,14 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="48dp"
         android:text="정말 맛있었다."
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/linkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="음식점 정보 자세히 보기" />
 
 </LinearLayout>
