@@ -36,9 +36,25 @@ Copyright 2020. 맛동연 All rights reserved.
 
 <img src="https://github.com/user-attachments/assets/9d3bf62a-ca1c-45cd-a20f-9694f28028df" width="500" /> <img src="https://github.com/user-attachments/assets/247bcc8b-fbab-4ee9-bc5f-b82d1f48c4ed" width="300" />
 
-
-
 <br/>
+
+## 맛동여지도 화면 소개
+### 스플레쉬 화면
+![image](https://github.com/user-attachments/assets/b708ee5d-60c8-4653-8395-03709c6fd5f1)
+
+### 메인 화면
+![image](https://github.com/user-attachments/assets/334acb35-0db9-4205-b964-0a254cf84d77)
+
+### 음식점 리스트 화면
+![image](https://github.com/user-attachments/assets/7d2ebbd3-fc3b-4694-970e-10e1d0523859)
+![image](https://github.com/user-attachments/assets/0241a7e8-6308-4458-a00e-e4da2fd5af42)
+
+
+### 음식점 상세 정보 화면
+![image](https://github.com/user-attachments/assets/e820fd61-3b63-4729-872c-acf94edec4c5)
+
+## 맛동여지도(맛東輿地圖) 개발자들
+정세진 @sejin, 김대호 @DhoWor1d, 임동연 @yeon-dong
 
 ## 에뮬레이터 실행시 본인 화면에서 시작하게 하는법
 ` app/manifests/AndroidManifest.xml ` 에서 본인이 작업하는 액티비티 사이에 
